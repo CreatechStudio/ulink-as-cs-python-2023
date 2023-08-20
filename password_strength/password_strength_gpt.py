@@ -1,3 +1,8 @@
+'''
+write a python program that
+at least one lowercase,uppercase letter,one digit, one special character, no commonn passwords, no username contain
+'''
+
 import re
 
 COMMON_PASSWORDS = ["password123", "12345678", "qwerty"]
