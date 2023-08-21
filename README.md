@@ -45,7 +45,7 @@
 | add    | 新增文件     |
 | rm     | 删除文件     |
 | fix    | 修复问题     |
-| update | 更新逻辑     |
+| update | 更新逻辑/新增功能     |
 | tuning | 优化逻辑     |
 | rb     | 回滚代码     |
 | rename | 重命名文件   |
