@@ -117,6 +117,7 @@ def check_password():
 # Create a GUI window
 root = tk.Tk()
 root.title("Password Validator and Login")
+root.geometry("518x380")
 
 username_label = tk.Label(root, text="Username:")
 username_label.pack()
