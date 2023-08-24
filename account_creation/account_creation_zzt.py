@@ -33,7 +33,7 @@ def is_valid_password(password, username):
 
 def has_sequential_pattern(password):
     for i in range(len(password) - 4):
-        if password[i:i+5] in '1234567890abcdefghijklmnopqrstuvwxyz':
+        if password[i:i+5] in '01234567890abcdefghijklmnopqrstuvwxyz':
             return True
     return False
 
