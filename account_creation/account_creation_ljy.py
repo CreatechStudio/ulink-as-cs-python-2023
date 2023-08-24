@@ -39,7 +39,7 @@ if __name__ == "__main__":
             if choice == "1":
                 username = input("Your username: ").strip()
                 while username not in acc_info:
-                    username = input("No such user!\Retry username: ").strip()
+                    username = input("No such user!\nRetry username: ").strip()
 
                 input_counter = 5
                 pwd = input("Your password: ").strip()
