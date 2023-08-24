@@ -114,7 +114,6 @@ def check_password():
 
     messagebox.showinfo("Password Registration and Validation Result", feedback)
 
-
 # Create a GUI window
 root = tk.Tk()
 root.title("Password Validator and Login")
