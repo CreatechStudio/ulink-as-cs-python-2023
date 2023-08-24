@@ -28,9 +28,9 @@ if __name__ == "__main__":
     if not os.path.isfile("./account_creation_ljy.py.json"):
         with open("./account_creation_ljy.py.json", "w") as f:
             f.write(r"{}")
-    with open("./account_creation_ljy.py.json", "r") as f:
+    with open("./account_creation_ljy.json", "r") as f:
         acc_info = json.load(f)
-    f = open("./account_creation_ljy.py.json", "w")
+    f = open("./account_creation_ljy.json", "w")
 
     # main loop
     while True:

@@ -58,7 +58,7 @@ def save_password(username, password):
     hashed_password = hashlib.sha256(password.encode()).hexdigest()
     data = {}
     try:
-        with open('./passwords.json', 'r') as file:
+        with open('./account_creation_zzt.json', 'r') as file:
             data = json.load(file)
             if username in data:
                 return False  # Username already exists
@@ -67,7 +67,7 @@ def save_password(username, password):
     
     data[username] = hashed_password
     
-    with open('./passwords.json', 'w') as file:
+    with open('./account_creation_zzt.json', 'w') as file:
         json.dump(data, file, indent=4)
     
     return True
@@ -76,7 +76,7 @@ def check_login():
     username = username_entry.get()
     password = password_entry.get()
     
-    with open('./passwords.json', 'r') as file:
+    with open('./account_creation_zzt.json', 'r') as file:
         data = json.load(file)
         if username in data and data[username] == hashlib.sha256(password.encode()).hexdigest():
             feedback = "Login successful."
