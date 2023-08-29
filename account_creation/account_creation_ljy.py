@@ -2,6 +2,7 @@ import json
 import re
 import os
 import string
+import hashlib
 
 COMMON_WORDS = ["password123", "12345678", "qwerty", "password"]
 VALID_CHARS = list(string.ascii_letters + string.digits + string.punctuation)
@@ -21,6 +22,10 @@ def check(password: str, name: str):
     return preq and common and len(password) >= 8
 
 
+def hashequal(encrypted, text, salt=""):
+    return encrypted == hashlib.sha256((text + salt).encode()).hexdigest()
+
+
 acc_info = dict()
 
 if __name__ == "__main__":
@@ -30,7 +35,6 @@ if __name__ == "__main__":
             f.write(r"{}")
     with open("./account_creation_ljy.json", "r") as f:
         acc_info = json.load(f)
-    f = open("./account_creation_ljy.json", "w")
 
     # main loop
     while True:
@@ -43,7 +47,7 @@ if __name__ == "__main__":
 
                 input_counter = 5
                 pwd = input("Your password: ").strip()
-                while not pwd == acc_info[username]:
+                while not hashequal(acc_info[username], pwd, salt=username):
                     if input_counter > 0:
                         input_counter -= 1
                     else:
@@ -62,12 +66,14 @@ if __name__ == "__main__":
                 while not check(pwd, username):
                     print("Too weak password!")
                     pwd = input("Better password: ").strip()
-                acc_info.update({username: pwd})
-                json.dump(acc_info, f)
+                acc_info.update(
+                    {username: hashlib.sha256((pwd + username).encode()).hexdigest()}
+                )
+                with open("./account_creation_ljy.json", "w") as f:
+                    json.dump(acc_info, f)
                 print("Account created.")
             elif choice == "q":
                 print("Bye bye")
-                f.close()
                 exit(0)
             else:
                 print("I do not understand. Please retry...")
