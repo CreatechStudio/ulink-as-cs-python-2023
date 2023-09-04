@@ -1,4 +1,8 @@
-life_in_year = input("Please input your expected life in your year: ")
-lif_in_week = life_in_year*12*4
-life_in_day = life_in_year*365
-print(f"You have {life_in_year} years, {lif_in_week} weeks, and {life_in_day} days left.")
+print("Welcome to the tip calculator.")
+bill_price = float(input("What was the total bill? $"))
+tip_percentage = int(input("What percentage tip would you like to give? 10, 12, or 15? "))
+people = int(input("How many people to split the bill? "))
+total_bill = bill_price + (bill_price * tip_percentage / 100)
+bill_per_person = total_bill / people
+final_amount = round(bill_per_person, 2)
+print(f"Each person should pay: ${final_amount}")
