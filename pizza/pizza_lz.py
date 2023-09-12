@@ -12,6 +12,7 @@ def get_input(prompt, valid_options):
             return response
         print("Invalid entry. Please try again.")
 
+
 def calculate_price():
     """
     Calculate the price of a pizza order at Ulink Pizza Cafe.
@@ -35,5 +36,6 @@ def calculate_price():
         price += 10
 
     print(f"Your final bill is {price}")
+
 
 calculate_price()
