@@ -38,4 +38,7 @@ def calculate_price():
     print(f"Your final bill is {price}")
 
 
-calculate_price()
+try:
+    calculate_price()
+except KeyboardInterrupt:
+    print("\nExit")
