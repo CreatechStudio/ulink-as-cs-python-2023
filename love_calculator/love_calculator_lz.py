@@ -1,25 +1,23 @@
-name1 = input()
-name2 = input()
-score1 = 0
-score2 = 0
+name1 = input("Enter name 1: ")
+name2 = input("Enter name 2: ")
 
-list = ["TRUE", "LOVE"]
+score = 0
+
+list_words = ["TRUE", "LOVE"]
 
 for i in name1:
     i = i.upper()
-    if i in list[0]:
-        score1 += 1
-    if i in list[1]:
-        score2 += 1
+    if i in list_words[0]:
+        score += 10
+    if i in list_words[1]:
+        score += 1
 
 for i in name2:
     i = i.upper()
-    if i in list[0]:
-        score1 += 1
-    if i in list[1]:
-        score2 += 1
-
-score = score1 * 10 + score2
+    if i in list_words[0]:
+        score += 10
+    if i in list_words[1]:
+        score += 1
 
 print(f"Your score is {score}. ")
 
