@@ -9,13 +9,11 @@ def prompt_input(prompt, validator):
 
 
 def get_input(prompt, valid_options):
-    validator = lambda response: response.upper() in valid_options
-    return prompt_input(prompt, validator).upper()
+    return prompt_input(prompt, lambda response: response.upper() in valid_options).upper()
 
 
 def get_integer_input(prompt):
-    validator = lambda response: response.isdigit()
-    return int(prompt_input(prompt, validator))
+    return int(prompt_input(prompt, lambda response: response.isdigit()))
 
 
 def get_price_and_apply_discount(price, discount):
